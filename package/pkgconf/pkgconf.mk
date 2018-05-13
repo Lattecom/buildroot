@@ -22,6 +22,7 @@ define HOST_PKGCONF_INSTALL_WRAPPER
 	$(SED) 's,@PKG_CONFIG_LIBDIR@,$(STAGING_DIR)/usr/lib/pkgconfig:$(STAGING_DIR)/usr/share/pkgconfig,' \
 		-e 's,@STAGING_DIR@,$(STAGING_DIR),' \
 		$(HOST_DIR)/usr/bin/pkg-config
+	$(HOSTLN) -s $(HOST_DIR)/usr/bin/pkg-config $(TARGET_CROSS)pkg-config
 endef
 
 define HOST_PKGCONF_STATIC

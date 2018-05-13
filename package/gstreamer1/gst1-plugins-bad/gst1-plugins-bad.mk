@@ -77,7 +77,6 @@ GST1_PLUGINS_BAD_CONF_OPTS += \
 	--disable-sbc \
 	--disable-schro \
 	--disable-zbar \
-	--disable-rtmp \
 	--disable-spandsp \
 	--disable-gsettings \
 	--disable-sndio \
@@ -503,6 +502,13 @@ GST1_PLUGINS_BAD_CONF_OPTS += --disable-yadif
 endif
 
 # Plugins with dependencies
+
+ifeq ($(BR2_PACKAGE_GST1_PLUGINS_BAD_PLUGIN_RTMP),y)
+GST_PLUGINS_BAD_CONF_OPT += --enable-rtmp
+GST1_PLUGINS_BAD_DEPENDENCIES += rtmpdump
+else
+GST_PLUGINS_BAD_CONF_OPT += --disable-rtmp
+endif
 
 ifeq ($(BR2_PACKAGE_GST1_PLUGINS_BAD_PLUGIN_SHM),y)
 GST1_PLUGINS_BAD_CONF_OPTS += --enable-shm
