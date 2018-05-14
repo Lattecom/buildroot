@@ -21,3 +21,37 @@ Buildroot comes with a basic configuration for a number of boards. Run
 Please feed suggestions, bug reports, insults, and bribes back to the
 buildroot mailing list: buildroot@buildroot.org
 You can also find us on #buildroot on Freenode IRC.
+
+Code Structure
+```
+(d): directory
+
+buildroot
+├── arch(d): Contains config files for processor architectures
+├── board(d): Contains build files(수정필요) for boards
+├── boot(d): Contains make & config files for bootloaders
+├── configs(d): Contains default config files for target machines
+├── docs(d): Contains document files
+│   ├── manual(d): Contains manual(local) text files
+│   └── website(d): Contains [online manual](https://buildroot.org/docs.html) files
+├── fs(d): Contains make & config files for file systems
+├── linux(d)
+├── package(d)
+├── support(d)
+├── system(d): Contains make(config) files and directory structure
+│   ├── skeleton(d): Skeleton of system directory structure
+│   ├── Config.in
+│   ├── device_table_dev.txt
+│   ├── device_table.txt
+│   └── system.mk
+├── toolchain(d)
+├── .defconfig
+├── .gitignore
+├── CHANGES
+├── Config.in
+├── Config.in.legacy
+├── COPYING
+├── Makefile
+├── Makefile.legacy
+└── README
+```
